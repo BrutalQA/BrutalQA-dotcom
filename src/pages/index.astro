@@ -13,12 +13,21 @@ import gitHubPages from '../../public/assessts/github-pages.png';
 const logos = [
   { name: 'AWS', src:aWS },
   { name: 'Astro.js', src: astro},
+  { name: 'JavaScript', src: javaScript},
   { name: 'TypeScript', src: typeScript},
   { name: 'Markdown', src: markdown},
   { name: 'GitHub Actions', src: gitHubActions},
-  { name: 'WebdriverIO', src: webDriverIO},
-  { name: 'JavaScript', src: javaScript},
   { name: 'GitHub Pages', src: gitHubPages },
+  { name: 'WebdriverIO', src: webDriverIO},
+  { name: 'AWS', src:aWS },
+  { name: 'Astro.js', src: astro},
+  { name: 'JavaScript', src: javaScript},
+  { name: 'TypeScript', src: typeScript},
+  { name: 'Markdown', src: markdown},
+  { name: 'GitHub Actions', src: gitHubActions},
+  { name: 'GitHub Pages', src: gitHubPages },
+  { name: 'WebdriverIO', src: webDriverIO},
+  
 ];
 ---
 
@@ -61,16 +70,13 @@ const logos = [
       <>
         {logos.map(logo => (
           <div class="logo-item">
-            <img src={logo.src} alt={logo.name} />
-          </div>
+            <Image src={logo.src} alt={logo.name} />
+  </div>
         ))}
       </>
     ))}
   </div>
 </div>
-
-
-
       <footer>
         <p>BUILT WITH ***passion and love***</p>
       </footer>
@@ -191,14 +197,12 @@ const logos = [
     top: 0;
     height: 100%;
     width: 20%;
-    background: linear-gradient(to right, transparent, #000);
     pointer-events: none;
   }
 
   .logo-track {
     display: flex;
     gap: 3rem;
-    animation: scroll 30s linear infinite;
     height: 200%
     width: max-content;
     padding: 0 1.5rem;
@@ -207,7 +211,6 @@ const logos = [
   .logo-item {
     font-family: var(--font-mono);
     font-size: 1.2rem;
-    white-space: nowrap;
     transition: all 0.3s ease;
   }
 
@@ -215,15 +218,6 @@ const logos = [
     color: #000;
     background: #fff;
     padding: 0.5rem 1rem;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
   }
 
   .logo-track:hover {
@@ -235,6 +229,16 @@ const logos = [
     padding: 2rem;
     border-top: 4px solid #fff;
     text-align: right;
+  }
+
+// Animation
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    1000% {
+      transform: translateX(-50%);
+    }
   }
 
   @media (max-width: 768px) {
@@ -263,14 +267,38 @@ const logos = [
 	overflow: hidden;
 	width: 100%;
 	height: 100px;
+  	
+	&::before,
+	&::after {
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 0;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
 	}
 	.logo-track {
 	display: flex;
-	animation: scroll 20s linear infinite;
+	animation: scroll 40s linear infinite;
+  width: calc(105px * 28);
+  gap: 8rem;
+  align-items: center
+
 	}
 	.logo-item {
 	flex: 0 0 auto;
-	width: 100px;
+	width: 50px;
+  align-items: center
 	margin: 0 10px;
 	}
 	.logo-item img {
@@ -310,5 +338,63 @@ const logos = [
     margin-right: -30px; /* Adjust the spacing as needed */
     filter: grayscale(100%);
   }
+
+@mixin white-gradient {
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+// Animation
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+// Styling
+.slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 100px;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 960px;
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(250px * 7);
+	}
+	
+	.slide {
+		height: 100px;
+		width: 250px;
+	}
+}
 
 </style>

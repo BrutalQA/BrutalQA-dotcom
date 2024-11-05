@@ -1,46 +1,48 @@
 ---
+import { Image } from 'astro:assets';
+import shutterEye from './public/assessts/Shutter Eyeclean.png';
+
 const logos = [
-  { name: 'AWS', src: '/path/to/aws.svg' },
-  { name: 'Astro.js', src: '/path/to/astro.svg' },
-  { name: 'TypeScript', src: '/path/to/typescript.svg' },
-  { name: 'Markdown', src: '/path/to/markdown.svg' },
-  { name: 'GitHub Actions', src: '/path/to/github-actions.svg' },
-  { name: 'WebdriverIO', src: '/path/to/webdriverio.svg' },
-  { name: 'JavaScript', src: '/path/to/javascript.svg' },
-  { name: 'GitHub Pages', src: '/path/to/github-pages.svg' },
+  { name: 'AWS', src: 'public/assessts/Amazon_Web_Services_Logo.svg' },
+  { name: 'Astro.js', src: 'public/assessts/astro-logo-light-gradient.svg' },
+  { name: 'TypeScript', src: 'public/assessts/Typescript_logo_2020.svg' },
+  { name: 'Markdown', src: 'public/assessts/markdown.svg' },
+  { name: 'GitHub Actions', src: 'public/assessts/github-actions-CICD.png' },
+  { name: 'WebdriverIO', src: 'public/assessts/WDIO Robot.svg' },
+  { name: 'JavaScript', src: 'public/assessts/Unofficial_JavaScript_logo_2.svg' },
+  { name: 'GitHub Pages', src: 'public/assessts/github-pages.png' },
 ];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="public/assessts/Shutter Eyeclean.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 	<title>BRUTAL QA</title>
   </head>
   <body>
     <main>
-     <div class="header-container"></div>
-        
-        <h1><img src="public/assessts/—Pngtree—one eye logo_5084867.png" alt="BrutalQA Logo" class="brutalqa-logo" />
-        BRUTAL QA</h1>
-      </div>
+      <nav>
+        <a href="/resume">MARCUS BATES_</a>
+        <a href="/blog">BLOG_</a>
+      </nav>
 	  <header>
+        <div class="header-container"></div>
+        <h1>
+        <Image src={shutterEye}  alt="Brutal QA Logo" class="brutalqa-logo"  />
+        BRUTAL QA
+        </h1>
+      </div>
         <div class="subtitle">Built for simplicity, confidence, and speed</div>
       </header>
-
-      <nav>
-        <a href="/about">Who is MARCUS BATES_</a>
-        <a href="/blog">BLOG_</a>
-        <a href="/contact">CONTACT_</a>
-      </nav>
-
       <div class="content-grid">
         <div class="content-box">
-          <h2>LATEST POST</h2>
-          <p>EXPLORING THE RAWNESS OF WEB DEVELOPMENT</p>
-          <span class="date">2024-11-04</span>
+          <h2>How did you find us?</h2>
+          <p>I can help you make better software. Take a look at my BLOG, download a copy of my RESUME, or send me a EMAIL</p>
+          <p> </p>
+          <p> </p>
         </div>
       </div>
 
@@ -62,7 +64,7 @@ const logos = [
 
 
       <footer>
-        <p>BUILT WITH passion and love</p>
+        <p>BUILT WITH ***passion and love***</p>
       </footer>
     </main>
   </body>
@@ -172,14 +174,7 @@ const logos = [
   }
 
   /* New Carousel Styles */
-  .tech-carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    border: 2px solid #fff;
-    padding: 2rem 0;
-    margin: 4rem 0;
-  }
+
 
   .tech-carousel::after {
     content: '';
@@ -196,6 +191,7 @@ const logos = [
     display: flex;
     gap: 3rem;
     animation: scroll 30s linear infinite;
+    height: 200%
     width: max-content;
     padding: 0 1.5rem;
   }
@@ -301,10 +297,10 @@ const logos = [
   align-items: left;
   }
   .brutalqa-logo {
-    max-width: 250px; /* Adjust the size as needed */
-    max-height: 250px; /* Adjust the size as needed */
-    margin-right: 1px; /* Adjust the spacing as needed */
-    filter: invert(18%) sepia(100%) saturate(7471%) hue-rotate(0deg) brightness(104%) contrast(107%);
+    max-width: 75px; /* Adjust the size as needed */
+    max-height: 75px; /* Adjust the size as needed */
+    margin-right: -30px; /* Adjust the spacing as needed */
+    filter: grayscale(100%);
   }
 
 </style>

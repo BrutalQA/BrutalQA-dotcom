@@ -1,0 +1,524 @@
+---
+import { Image } from 'astro:assets';
+import marcus from './public/assessts/marcus.jpeg';
+import shutterEye from './public/assessts/Shutter Eyeclean.png';
+
+const socials = [
+  {
+    name: "GITHUB_",
+    url: "https://github.com/M4RcB4",
+    icon: `<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
+  },
+  {
+    name: "LINKEDIN_",
+    url: "https://www.linkedin.com/in/sdet-marcus-bates/",
+    icon: `<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>`,
+  },
+  {
+    name: "EMAIL_",
+    url: "mailto:marcus.a.bates@gmail.com",
+    icon: `<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>`,
+  }
+];
+
+const experience = [
+  {
+    title: "LEAD QA AUTOMATION ENGINEER_",
+    company: "NUTRIEN AG SOLUTIONS_",
+    period: "2023 - 2024_",
+    description: [
+        "Technical lead for  Shared Services team which governed the automated testing practices for 28 engineers on 10 different teams using recurring meetings & technical documentation for OneHub platform for a $46B/yr company (SAFE)",
+        "Rewrote testing framework to enable a single test script to drive cross platform testing for Web, iOS, & Android using a shared code base (Webdriver IO | Appium | Cucumber | React Native | React.js)",
+        "Monitored & automated Logs during test runs (AWS CloudFront)",
+        "Wrote test scripts for React.js & React Native applications using containerized or locally run apps (Expo connected to cloud deployed backends)",
+        "Reduced  execution & maintenance costs by reducing lines of code by 65% for the cross platform app testing framework (WebDriverIO | Cucumber)",
+        "Partnered with DevOps to create automated test checkpoints in the CI/CD process to prevent builds with known bugs from being promoted (Jenkins | AWS BrowserStack)",
+        "Maintained data feeds to analytics dashboards to indicate the health, completeness, & testing for scheduled releases (AWS Cloudwatch | Browserstack Observability | Jira)",
+    ]
+  },
+  {
+    title: "LEAD QA AUTOMATION ENGINEER_",
+    company: "THINK ALPHA TECHNOLOGIES_",
+    period: "2022 - 2023_",
+    description: [
+        "Sole QA expert for a lean & mean startup team of self-sufficient developers providing guidance for E2E & Component testing (Cypress)",
+        "Implemented an E2E & Component testing framework for use by developers (Cypress)",
+        "Led design & planning of front end test methods & technologies (Agile | Risk & Context Based Testing)",
+        "Trained & supported UI developers on testing frameworks & testing methodology (Jest | React | Cypess)",
+        "Contributed test coverage & participated in code reviews of test code (Testrail)",
+        "Setup / maintained / analyzed metrics from Cypress dashboard for testing inefficiencies (Cypress | AWS)",
+    ]
+  },
+  {
+    title: "SENIOR SOFTWARE ENGINEER, QE_",
+    company: "GUILD EDUCATION_",
+    period: "2021 - 2022_",
+    description: [
+        "Manager in Training with 3 direct reports",
+        "Led / participated in numerous governance committees including the Architecture & Governance Committee for all of engineering",
+        "Designed / implemented / wrote test automation frameworks (Python | Node.js | Microservices | AWS | Postman| PyTest | Jest)",
+        "Monitored / interrogated Logs during test runs to catch issues during testing or in production (AWS CloudFront | DataDog )",
+        "Performed exploratory testing or wrote automated tests scripts for microservices (AWS CDK | Python | Node.js)",
+        "Created & worked with team members to implement a testing strategy that increased transparency & ensured functionality",
+        "Interviewed over 50 candidates & participated in creation of the hiring process",
+        "Technical supervisor of a pillar consisting of 4 teams",
+        "Worked heavily with Lambda hosted microservices (AWS Python CDK)",
+    ]
+  },
+  {
+    title: "SOFTWARE DEVELOPER ENGINEERING IN TEST_",
+    company: "RIFFYN_",
+    period: "2019 - 2021_",
+    description: [
+        "Led the test automation transformation from Webdriver IO to Cypress",
+        "Rewrote dockerized Webdriver IO test to Cypress & ran them in a CI/CD pipeline (Jenkins | AWS)",
+        "Monitored / interrogated Logs during test runs to catch issues during testing or in production (DataDog)",
+        "Enhanced test enablement through writing a test automation framework that spun up a local instance of the kubernetes system using minikube",
+        "Trained & provided daily support of front-end developers using Cypress to test their front end code",
+        "Sought out, interviewed, & hired another automation engineer to help with Cypress & other automation work",
+        "Focused on reducing barriers to testing",
+        "Led an offshore resource helping with conversion of Webdriver IO into Cypress",
+        "Worked with Scientists/Customers to understand real world usage of the software",
+    ]
+  },
+  {
+    title: "SENIOR SOFTWARE QUALITY ASSURANCE ENGINEER_",
+    company: "CHARTER COMMUNICATIONS_",
+    period: "2019(6M CONTRACT)",
+    description: [
+        "Leading contributor of E2E tests for a customer facing cell phone activation portal that covered every single new feature being developed (Webdriver IO)",
+        "Translated automated tests into collaborative framework with stakeholders ( Webdriver IO | Cucumber)",
+        "Authored & executed manual & automated test cases serving as release train engineer (Testrails | Git)",
+        "Participated in Agile QA, LEAN workshops & various agile planning ceremonies",
+        "Worked with other teams to reuse consumable packages of software testing tools (NPM | Node)",
+        "Participated in code reviews",
+    ]
+  },
+  {
+    title: "SENIOR QUALITY ASSURANCE ENGINEER_",
+    company: "MYSTRENGTH, INC_",
+    period: "2016 - 2019_",
+    description: [
+        "Contributed to the success of an early-stage startup, which achieved rapid growth and completed a successful IPO within two and a half years",
+        "Sole QA subject matter expert at the company for the first 2 years responsible for establishing testing practices for a budding startup, includes hiring & onboarding to grow QA department",
+        "Designed & implemented automated API & UI test framework for a cross platform mobile app (Postman | Xamarin | C# | .net | AWS)",
+        "Manually tested every new feature being implemented during app redesign (Testrail)",
+        "Wrote Manual / automated test scripts for a Web app, a native cross platform mobile application, a REST data API used by numerous backend data partners like Aetna & Humana (Angular | Postman | Xamarin)",
+    ]
+  },
+  {
+    title: "SOFTWARE QUALITY ASSURANCE ENGINEER_",
+    company: "FOODSERVICEWAREHOUSE.COM_",
+    period: "2015 - 2016_",
+    description: [
+        "Wrote automated tests for an existing Grid framework that was managed & run locally that tested a $150M/yr E-commerce platform (Selenium | Webdriver)",
+        "Authored & executed manual & automated test cases",
+        "Designed, implemented, & maintained UI automation framework for >20 micro web apps (Selenium GRID | Webdriver)",
+        "Created & maintained test framework for the APIs connected to Mongo & SQL databases powering a high volume E-Commerce Website (AWS | Jenkins | Postman)",
+        "Served as lead test engineer for all hands cross-org testing initiatives",
+        "Evangelized the Automation Guild which established & shared automated testing practices at the company",
+    ]
+  },
+    {
+    title: "QA ANALYST | TEAM LEAD_",
+    company: "INTERMAP TECHNOLOGIES_",
+    period: "2014 - 2015_",
+    description: [
+        "Led a 5 person off-shore manual testing team with regular training sessions covering skills from quality methodology to using backend services to isolate defects",
+        "Authored & executed manual & automated test cases including writing tests in Selenium IDE to automate test scripts (Selenium)",
+        "Contributed in the planning-grooming of the backlog meetings (Microsoft Team Foundation Server)",
+        "Received goals from management & translated them into team goals",
+        "Hosted product demos, produced user requirements from User Acceptance Testing",
+    ]
+  }
+];
+
+const skills = [
+"JavaScript",
+"Cypress",
+"Jest",
+"WDIO",
+"Python",
+"PyTest",
+"Requests",
+"MongoDB",
+"SQL",
+"Postman",
+"Appium",
+"Cucumber",
+"Github",
+"Gitlab",
+"Selenium WebDriver",
+"SauceLabs",
+"BrowserStack",
+"Jira",
+"Trello",
+"Shortcut",
+"Testrail",
+"SAFE",
+"Scrum"
+];
+
+const toolingSkills = [
+  "SauceLabs_",
+  "BrowserStack_",
+  "MongoDB_",
+  "SQL_",
+  "Jira_",
+  "Testrail_",
+  "SAFE_",
+  "Scrum_"
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>BRUTAL QA | MARCUS BATES_</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="/">HOME_</a>
+        <a href="/blog">BLOG_</a>
+      </nav>
+			<header>
+				<div class="header-container"></div>
+				<h1>
+				<Image src={shutterEye}  alt="Brutal QA Logo" class="brutalqa-logo"  />
+				MARCUS BATES_
+				</h1>
+			</div>
+				<div class="subtitle">AUTOMATION ENGINEER</div>
+			</header>
+      <div class="social-links">
+        {socials.map(social => (
+          <a href={social.url} target="_blank" rel="noopener noreferrer" class="social-link">
+            <Fragment set:html={social.icon} />
+            <span>{social.name}</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="content-grid">
+        <div class="content-box">
+          <h2>ABOUT ME_</h2>
+          <p>
+            Denver based, I love M&M’s and all things outdoors. Also a passionate QA Automation Engineer with over a decade of hands-on experience, 
+            known for building robust testing frameworks and elevating quality practices in everything from startups to Fortune 500 companies. I’ve 
+            led projects that cut costs, sped up processes, and ensured high-quality products across web and mobile platforms. Skilled in JavaScript,
+             WebDriverIO, Cypress, and Appium, I work closely with DevOps and engineering teams to integrate testing into CI/CD pipelines smoothly. 
+             Along the way, I’ve had the chance to mentor junior engineers, establish best practices, and even contribute to a successful IPO.
+          </p>
+        </div>
+        <Image src={marcus}  alt="Brutal QA Logo" class="marcus"  />
+        </div>
+        </div>
+        
+
+
+          <h2>SKILLS_</h2>
+            <div class="content-box">
+          <div class="skills-grid">
+            {skills.map(skill => (
+              <span class="skill-tag">{skill}</span>
+            ))}
+          </div>
+
+
+
+
+
+
+      </div>
+
+      <div class="experience-section">
+        <h2>EXPERIENCE_</h2>
+        {experience.map(job => (
+          <div class="experience-box">
+            <div class="job-header">
+              <h3>{job.title}</h3>
+              <span class="company">{job.company}</span>
+              <span class="period">{job.period}</span>
+            </div>
+            <ul class="job-description">
+              {job.description.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="resume-download">
+        <a href="public/assessts/Marcus Bates - Resume (2024).docx" class="download-button" download="Marcus_Bates_Resume_2024.docx">
+          DOWNLOAD FULL RESUME_
+        </a>
+      </div>
+
+      <footer>
+        <p>BUILT WITH {Astro.generator}</p>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-mono);
+    background: #000;
+    color: #fff;
+    cursor: crosshair;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    border: 4px solid #fff;
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: bold;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .contact {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  nav {
+    border-left: 4px solid #fff;
+    margin: 4rem 0;
+  }
+
+  nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease;
+  }
+
+  nav a:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+    transform: translateX(1rem);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px);
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+  }
+
+  .content-box {
+    border: 2px solid #fff;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .content-box-pic {
+    border: 2px solid #fff;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .content-box:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .content-box p {
+    line-height: 1.6;
+  }
+
+  .mt-4 {
+    margin-top: 1rem;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .experience-section {
+    margin: 4rem 0;
+  }
+
+  .experience-box {
+    border: 2px solid #fff;
+    padding: 2rem;
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .experience-box:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .job-header {
+    margin-bottom: 1rem;
+  }
+
+  .company {
+    display: block;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+
+  .period {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .job-description {
+    list-style: none;
+  }
+
+  .job-description li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid currentColor;
+  }
+
+  .resume-download {
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  .download-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .download-button:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px);
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    border-top: 4px solid #fff;
+    text-align: right;
+  }
+    .marcus {
+    max-width: 500px; /* Adjust the size as needed */
+    max-height: 500px; /* Adjust the size as needed */
+    margin-right: -30px; /* Adjust the spacing as needed */
+    filter: ;
+  }
+    .brutalqa-logo {
+    max-width: 75px; /* Adjust the size as needed */
+    max-height: 75px; /* Adjust the size as needed */
+    margin-right: -30px; /* Adjust the spacing as needed */
+    filter: grayscale(100%);
+  }
+    .header-container {
+  display: flex;
+  align-items: left;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 1rem;
+    }
+
+    header {
+      padding: 1rem;
+    }
+
+    .social-links {
+      flex-direction: column;
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

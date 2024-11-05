@@ -1,12 +1,20 @@
 {
-  "name": "codespaces-blank",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "brutalist-template",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^4.16.9",
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.6.3"
+  }
 }

@@ -1,0 +1,306 @@
+---
+import { Image } from 'astro:assets';
+import shutterEye from './public/assessts/Shutter Eyeclean.png';
+
+const logos = [
+  { name: 'AWS', src: 'public/assessts/Amazon_Web_Services_Logo.svg' },
+  { name: 'Astro.js', src: 'public/assessts/astro-logo-light-gradient.svg' },
+  { name: 'TypeScript', src: 'public/assessts/Typescript_logo_2020.svg' },
+  { name: 'Markdown', src: 'public/assessts/markdown.svg' },
+  { name: 'GitHub Actions', src: 'public/assessts/github-actions-CICD.png' },
+  { name: 'WebdriverIO', src: 'public/assessts/WDIO Robot.svg' },
+  { name: 'JavaScript', src: 'public/assessts/Unofficial_JavaScript_logo_2.svg' },
+  { name: 'GitHub Pages', src: 'public/assessts/github-pages.png' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="public/assessts/Shutter Eyeclean.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+	<title>BRUTAL QA</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="/resume">MARCUS BATES_</a>
+        <a href="/blog">BLOG_</a>
+      </nav>
+	  <header>
+        <div class="header-container"></div>
+        <h1>
+        <Image src={shutterEye}  alt="Brutal QA Logo" class="brutalqa-logo"  />
+        BRUTAL QA
+        </h1>
+      </div>
+        <div class="subtitle">Built for simplicity, confidence, and speed</div>
+      </header>
+      <div class="content-grid">
+        <div class="content-box">
+          <h2>How did you find us?</h2>
+          <p>I can help you make better software. Take a look at my BLOG, download a copy of my RESUME, or send me a EMAIL</p>
+          <p> </p>
+          <p> </p>
+        </div>
+      </div>
+
+
+<div class="tech-carousel">
+  <div class="logo-track">
+    {[1, 2].map(() => (
+      <>
+        {logos.map(logo => (
+          <div class="logo-item">
+            <img src={logo.src} alt={logo.name} />
+          </div>
+        ))}
+      </>
+    ))}
+  </div>
+</div>
+
+
+
+      <footer>
+        <p>BUILT WITH ***passion and love***</p>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root {
+    --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
+      monospace;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-mono);
+    background: #000;
+    color: #fff;
+    cursor: crosshair;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  header {
+    border: 4px solid #fff;
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: bold;
+    letter-spacing: -2px;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  nav {
+    border-left: 4px solid #fff;
+    margin: 4rem 0;
+  }
+
+  nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease;
+  }
+
+  nav a:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+    transform: translateX(1rem);
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+  }
+
+  .content-box {
+    border: 2px solid #fff;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .content-box:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .content-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .date {
+    margin-top: 1rem;
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  /* New Carousel Styles */
+
+
+  .tech-carousel::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, transparent, #000);
+    pointer-events: none;
+  }
+
+  .logo-track {
+    display: flex;
+    gap: 3rem;
+    animation: scroll 30s linear infinite;
+    height: 200%
+    width: max-content;
+    padding: 0 1.5rem;
+  }
+
+  .logo-item {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover {
+    color: #000;
+    background: #fff;
+    padding: 0.5rem 1rem;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
+
+  footer {
+    margin-top: 4rem;
+    padding: 2rem;
+    border-top: 4px solid #fff;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 1rem;
+    }
+
+    header {
+      padding: 1rem;
+    }
+
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-carousel {
+      padding: 1rem 0;
+    }
+
+    .logo-item {
+      font-size: 1rem;
+    }
+  }
+	.tech-carousel {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100px;
+	}
+	.logo-track {
+	display: flex;
+	animation: scroll 20s linear infinite;
+	}
+	.logo-item {
+	flex: 0 0 auto;
+	width: 100px;
+	margin: 0 10px;
+	}
+	.logo-item img {
+	width: 100%;
+	height: auto;
+	}
+	@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+	}
+	.fade {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	pointer-events: none;
+	}
+	.fade-left {
+	left: 0;
+	background: linear-gradient(to right, white, transparent);
+	}
+	.fade-right {
+	right: 0;
+	background: linear-gradient(to left, white, transparent);
+	}
+  .header-container {
+  display: flex;
+  align-items: left;
+  }
+  .brutalqa-logo {
+    max-width: 75px; /* Adjust the size as needed */
+    max-height: 75px; /* Adjust the size as needed */
+    margin-right: -30px; /* Adjust the spacing as needed */
+    filter: grayscale(100%);
+  }
+
+</style>

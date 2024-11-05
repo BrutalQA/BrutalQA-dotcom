@@ -1,6 +1,5 @@
 {
   "name": "brutalist-template",
-  "packageManager": "pnpm",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
